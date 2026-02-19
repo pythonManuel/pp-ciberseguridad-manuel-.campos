@@ -1,0 +1,60 @@
+Tutorial de Instalación Profesional
+
+Actualización del sistema
+sudo apt update && sudo apt upgrade -y
+
+Instalación de Elasticsearch
+Paso 1 – Instalar dependencias
+sudo apt install apt-transport-https ca-certificates wget gnupg -y
+
+Paso 2 – Añadir clave GPG oficial
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
+
+Paso 3 – Añadir repositorio
+echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-8.x.list
+
+Paso 4 – Instalar Elasticsearch
+sudo apt update
+sudo apt install elasticsearch -y
+
+Paso 5 – Habilitar servicio
+sudo systemctl enable elasticsearch
+sudo systemctl start elasticsearch
+
+Paso 6 – Verificación
+sudo systemctl status elasticsearch
+
+
+Prueba de conectividad segura:
+
+curl --cacert /etc/elasticsearch/certs/http_ca.crt -u elastic https://localhost:9200
+
+3.3 Instalación de Kibana
+Paso 1 – Instalar paquete
+sudo apt install kibana -y
+
+Paso 2 – Configuración básica
+
+Editar:
+
+/etc/kibana/kibana.yml
+
+
+Parámetros mínimos:
+
+server.port: 5601
+server.host: "0.0.0.0"
+elasticsearch.hosts: ["https://localhost:9200"]
+
+
+Configurar autenticación mediante token de enrolamiento o credenciales seguras.
+
+Paso 3 – Habilitar servicio
+sudo systemctl enable kibana
+sudo systemctl start kibana
+
+Paso 4 – Verificación
+
+Acceso vía navegador:
+
+https://localhost:5601
