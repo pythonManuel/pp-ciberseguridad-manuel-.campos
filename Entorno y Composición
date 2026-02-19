@@ -1,0 +1,15 @@
+A continuación se presenta un contenido redactado bajo estándar técnico y formal, estructurado para cumplir con los requisitos indicados en el manual de práctica.
+
+1. Entorno Base Utilizado
+Sistema Operativo
+Distribución: Ubuntu Server
+Arquitectura: 64 bits (x86_64)
+Almacenamiento asignado: 160 GB
+Memoria RAM: 8 GB
+Servicios instalados: Elasticsearch y Kibana
+
+El sistema se compone de:
+Nodo único de Elasticsearch (motor de indexación y búsqueda)
+Instancia de Kibana conectada al nodo local
+Seguridad TLS habilitada por defecto (Elastic 8.x)
+Autenticación obligatoria.
