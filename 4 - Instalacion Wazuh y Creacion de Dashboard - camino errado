@@ -1,0 +1,31 @@
+
+1. Descargar paquete .deb:
+
+curl -o wazuh-agent_4.7.5-1_amd64.deb \
+https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_4.7.5-1_amd64.deb
+
+![1 instalamosWazuh con wget](https://github.com/user-attachments/assets/11121a69-e6b4-4e97-b4e1-3de3d86c1a90)
+
+![2 - iniciamos Wazuh en el agente](https://github.com/user-attachments/assets/afe09481-6389-4f89-a01f-cbac7ed4e4f5)
+
+luego comprobamos que en la lista de agentes, salga con su id y nombre sistema operativo:
+![3 - vemos que esta registrado como agente](https://github.com/user-attachments/assets/aa74f941-bbad-4609-81dd-3776d5cf6aa3)
+
+a partir de aquí nos disponemos a crear un dashboard para poder leer los flujos de logs. 
+
+![4 - creamos un dashboard](https://github.com/user-attachments/assets/cfea62c8-0e6d-49dc-bfb9-499b79cb046b)
+
+tenemos todas estas opciones de visualisaciones:
+
+![5 - elegimos un tipo de grafico](https://github.com/user-attachments/assets/3f6b1a6d-7122-4511-ab0f-31609fd821bd)
+
+Agregamos una torta, que en un comienzo carece de datos:
+
+![6 - agregamos la priera torta carece de datos](https://github.com/user-attachments/assets/0dd80bca-5796-47bd-a541-dd0d454d5a3e)
+
+vemos como se va armando el Dashboard:
+
+![7 - vemos como se va armando el dashboard](https://github.com/user-attachments/assets/a6aa6a78-8800-4a26-9a32-f765445fe91c)
+
+
+Lamentablemente el Dashboard no reflejaba los logs del agente 003, por lo cual tomamos la determinacion de no seguir este camino e interpretar los datos a travez de un dashboard determinado.
