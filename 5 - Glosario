@@ -1,0 +1,73 @@
+Definiciones de Componentes y Grupos de Eventos en Wazuh
+1️ - OSSEC
+OSSEC (Open Source Security Event Correlator) es un sistema HIDS (Host-based Intrusion Detection System) que permite la detección de intrusiones a nivel de host mediante el análisis de logs, monitoreo de integridad de archivos, detección de rootkits y respuestas automáticas.
+En Wazuh, el grupo ossec agrupa eventos generados por el motor principal del sistema de detección, incluyendo:
+Correlación de eventos
+Reglas personalizadas
+Alertas internas del agente
+Procesamiento de logs
+Su función principal es analizar eventos del sistema y generar alertas basadas en reglas de seguridad.
+
+2️ - Rootcheck
+
+Rootcheck es un módulo de seguridad diseñado para detectar indicios de rootkits, puertas traseras (backdoors) y configuraciones peligrosas en el sistema operativo.
+Este componente realiza verificaciones como:
+Búsqueda de archivos sospechosos
+Detección de puertos ocultos
+Análisis de configuraciones inseguras
+Comprobación de binarios alterados
+Su objetivo es identificar posibles signos de compromiso del sistema a nivel profundo.
+
+3 - AppArmor
+
+AppArmor (Application Armor) es un módulo de seguridad del kernel de Linux que implementa control de acceso obligatorio (MAC - Mandatory Access Control).
+Permite:
+Restringir qué archivos puede acceder una aplicación
+Controlar permisos de ejecución
+Limitar acceso a recursos del sistema
+Cuando aparecen alertas del grupo apparmor, normalmente indican:
+Intentos de acceso bloqueados
+Violaciones de políticas de seguridad
+Restricciones aplicadas por el sistema
+No necesariamente indica ataque; muchas veces representa el correcto funcionamiento del sistema de protección.
+
+4 - Syslog
+
+Syslog es un sistema estándar de registro de eventos en sistemas Unix y Linux.
+Se encarga de recopilar y almacenar:
+Eventos del sistema operativo
+Mensajes de servicios
+Errores del kernel
+Actividad de procesos
+En Wazuh, el grupo syslog contiene eventos obtenidos desde los archivos de log del sistema, comúnmente ubicados en:
+/var/log/syslog
+/var/log/auth.log
+Es una fuente primaria de información para el análisis de seguridad.
+
+5 - Dpkg
+
+Dpkg (Debian Package Manager) es el sistema de gestión de paquetes utilizado en distribuciones basadas en Debian (como Ubuntu).
+Permite:
+Instalar software
+Eliminar paquetes
+Actualizar aplicaciones
+Verificar integridad de paquetes
+Las alertas relacionadas con dpkg generalmente indican:
+Instalación de nuevos paquetes
+Actualizaciones del sistema
+Eliminación de software
+Cambios administrativos
+Este tipo de eventos suele estar asociado a mantenimiento o administración del sistema.
+
+6 - Config_changed
+
+Config_changed es un grupo de eventos que indica que se ha detectado una modificación en archivos de configuración del sistema.
+Estos cambios pueden incluir:
+Edición de archivos en /etc/
+Modificación de configuraciones de servicios
+Alteraciones en políticas de seguridad
+Cambios en permisos
+Este tipo de alerta es importante porque:
+Puede indicar actividad administrativa legítima
+Puede señalar manipulación no autorizada del sistema
+El monitoreo de cambios de configuración es fundamental para mantener la integridad y seguridad del entorno.
