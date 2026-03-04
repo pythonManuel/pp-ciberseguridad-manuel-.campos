@@ -1,6 +1,6 @@
 Módulo 2 - Usuarios y permisos.
 
-Para controlar el acceso al sistema se definieron distintos roles de usuario aplicando el principio de mínimo privilegio, donde cada usuario solo posee los permisos estrictamente necesarios.
+Para controlar el acceso al sistema se definieron distintos roles de usuario aplicando el principio de mínimo privilegio, donde cada usuario solo posee los permisos estrictamente necesarios. lo haremos segun la ley del minimo privilegio.
 
 Se definieron los siguientes usuarios:
 ![1 - roles y niveles de acceso](https://github.com/user-attachments/assets/3485f509-52b3-4583-a1fe-90f3684de6c9)
