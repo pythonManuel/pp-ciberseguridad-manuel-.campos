@@ -27,6 +27,97 @@ del usuario que es admin
 
 como se puede ver se editaron los permisos solo para que admin pueda ver todos, en analisis los analistas y admin puedan leer, y public donde todos pueden ver.
 
+Evaluación de riesgos por mala gestión de permisos
+
+Una mala configuración de usuarios, grupos o permisos en un sistema Linux puede generar vulnerabilidades importantes que comprometan la seguridad del sistema. Aunque en este caso se definió una estructura basada en roles y se aplicó el principio de mínimo privilegio, existen varios escenarios en los que una configuración incorrecta podría generar riesgos.
+
+A continuación se describen algunos casos hipotéticos asociados a la gestión de los usuarios root, admin, analista y usuario, así como a los directorios /admin, /analisis y /public.
+
+Acceso no autorizado a información administrativa
+
+El directorio /admin fue configurado con permisos 700, lo que significa que solo el usuario administrador puede acceder a él. Sin embargo, si por error se configuraran permisos demasiado abiertos, por ejemplo:
+
+chmod 777 /admin
+
+cualquier usuario del sistema podría:
+
+leer archivos administrativos
+
+modificar configuraciones
+
+ejecutar scripts administrativos
+
+Esto podría permitir que un usuario sin privilegios modifique configuraciones críticas o introduzca código malicioso.
+
+Manipulación de información de análisis
+
+El directorio /analisis está destinado al usuario analista para revisar registros o ejecutar herramientas de monitoreo. Si los permisos fueran configurados incorrectamente, por ejemplo:
+
+chmod 777 /analisis
+
+otros usuarios podrían:
+
+modificar registros de análisis
+
+alterar resultados de monitoreo
+
+eliminar evidencia de incidentes de seguridad
+
+Esto representa un riesgo especialmente grave en entornos de ciberseguridad, donde la integridad de los registros es fundamental para detectar ataques o incidentes.
+
+Alteración de archivos compartidos
+
+El directorio /public fue configurado con permisos 755, lo que permite a otros usuarios leer el contenido pero no modificarlo. Sin embargo, si se configurara con permisos 777, cualquier usuario podría escribir en esa carpeta.
+
+Un atacante podría:
+
+introducir archivos maliciosos
+
+reemplazar archivos legítimos
+
+utilizar la carpeta para distribuir scripts dañinos
+
+Esto podría facilitar ataques internos o comprometer la integridad de los archivos compartidos.
+
+Escalada de privilegios
+
+Si un usuario estándar obtuviera acceso a archivos del sistema o configuraciones administrativas, podría intentar escalar privilegios.
+
+Por ejemplo, si se otorgaran permisos incorrectos en archivos sensibles como:
+
+/etc/sudoers
+/etc/passwd
+/etc/shadow
+
+un atacante podría:
+
+modificar cuentas de usuario
+
+otorgarse privilegios administrativos
+
+obtener acceso completo al sistema
+
+Por esta razón, estos archivos solo pueden ser modificados por root.
+
+Uso indebido del usuario root
+
+El usuario root posee control total sobre el sistema. Si su contraseña fuera débil o si su acceso se utilizara de forma innecesaria, podría ocurrir:
+
+modificación accidental de archivos críticos
+
+eliminación de configuraciones importantes
+
+instalación de software malicioso
+
+Por esta razón, en sistemas Linux se recomienda utilizar usuarios administrativos como admin con sudo, reservando el uso directo de root solo para tareas críticas.
+
+Conclusión del análisis de riesgos
+
+La correcta gestión de permisos y roles es fundamental para mantener la seguridad de un sistema Linux. Configuraciones incorrectas pueden permitir accesos no autorizados, manipulación de información o incluso comprometer completamente el sistema.
+
+La estructura implementada en este análisis, basada en la separación de roles entre root, admin, analista y usuario, junto con permisos específicos en los directorios /admin, /analisis y /public, permite reducir significativamente estos riesgos y mantener un entorno más seguro y controlado.
+
+
 Conclusión
 
 Para mejorar la seguridad y organización del sistema Linux se definió una estructura de usuarios basada en roles y control de privilegios, aplicando el principio de mínimo privilegio, el cual establece que cada usuario debe tener únicamente los permisos necesarios para realizar sus tareas.
