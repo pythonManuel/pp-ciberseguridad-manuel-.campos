@@ -1,4 +1,4 @@
-Módulo Dos - Usuarios y permisos.
+Módulo 2 - Usuarios y permisos.
 
 Para controlar el acceso al sistema se definieron distintos roles de usuario aplicando el principio de mínimo privilegio, donde cada usuario solo posee los permisos estrictamente necesarios.
 
