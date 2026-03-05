@@ -179,7 +179,12 @@ En Linux generalmente implica pasar de usuario por defecto a usuario root
 
 Esto permite al atacante: modificar archivos críticos, instalar malware, persistir en el sistema, comprometer completamente el sistema operativo.
 
-se puede hacer de la siguiente manera, preguntamos por el kernel y buscamos exploit, o ocupamos leanpeace para ver distintas vulnerabilidades.
+se puede hacer de la siguiente manera, preguntamos por el kernel y buscamos exploit, o ocupamos leanpeas para ver distintas vulnerabilidades.
+
+![13   modulo 2 leanpeas](https://github.com/user-attachments/assets/c3f8dff9-affa-43c3-a57a-8170bb154eff)
+
+esto sirve para enumerar los servicios y encontrar alguno que permita escalar privilegios. pero eso no lo haremos ahora es solo una demostracion.
+
 
 
 
