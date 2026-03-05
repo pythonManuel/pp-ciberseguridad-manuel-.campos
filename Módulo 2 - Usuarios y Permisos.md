@@ -133,3 +133,57 @@ El usuario analista fue definido para tareas de monitoreo y análisis del sistem
 El usuario usuario corresponde a un usuario estándar del sistema, destinado a tareas básicas y acceso a archivos compartidos. Para este caso se creó el directorio /public, configurado con permisos 755, permitiendo que el propietario pueda modificar archivos mientras que otros usuarios pueden leer o acceder al contenido sin poder alterarlo.
 
 Esta estructura permite separar responsabilidades dentro del sistema, reducir riesgos de seguridad y evitar que usuarios sin privilegios puedan modificar configuraciones críticas. Además, la correcta gestión de permisos mediante herramientas como chmod y chown permite controlar el acceso a recursos del sistema de manera precisa, contribuyendo a mantener la integridad, confidencialidad y disponibilidad de la información.
+
+ANEXO
+
+ahora toca explicar un tipo de permiso llamado suid, la definicion estandart es la siguiente:
+
+"SUID (Set User ID) es un bit de permiso especial en Linux que permite que un archivo ejecutable se ejecute con los privilegios del propietario del archivo, en lugar de los privilegios del usuario que lo ejecuta."
+
+Esto se utiliza principalmente para permitir que usuarios no privilegiados ejecuten tareas que requieren permisos elevados, de forma controlada.
+
+En la mayoría de los sistemas Linux, el propietario de estos binarios suele ser root, y se representa con la letra s, como en la siguiente imagen:
+
+![8 - modulo 2 suid](https://github.com/user-attachments/assets/2ce6c567-d105-424e-8b30-f411bb427494)
+
+como se puede apreciar, la salida es la siguiente: -rwsr-xr-x 1 root root
+
+la "s" representa este permiso especial.
+
+asi es como se aplica con chmod este permiso especial, a continuacion le daremos el siguiente permiso a una carpeta llamada programa que tendra los valores 
+
+4 = SUID
+
+7 = rwx propietario
+
+5 = r-x grupo
+
+5 = r-x otros
+
+![9 modulo 2 suid](https://github.com/user-attachments/assets/444a87c2-a9ee-4f44-aae5-69f1968296f5)
+
+y se quita de la siguiente manera "chmod u-s programa", a continuacion la imagen de la carpeta creada, los permisos que vienen por defecto, luego los permisos suid aplicado y luego quitado
+
+![10 modulo 2 suid quitado](https://github.com/user-attachments/assets/da567605-a26b-4adc-9f64-eb5511acb412)
+
+
+En auditorías de seguridad es fundamental identificar todos los binarios con SUID.
+
+![11 modulo 2 todos suid](https://github.com/user-attachments/assets/5c8ce575-6888-4113-9622-b9800699e0c4)
+
+Escalamiento de privilegios
+
+Por definicion el escalamiento de privilegios es una técnica utilizada por un atacante para obtener permisos superiores a los que inicialmente posee en un sistema.
+
+En Linux generalmente implica pasar de usuario por defecto a usuario root
+
+Esto permite al atacante: modificar archivos críticos, instalar malware, persistir en el sistema, comprometer completamente el sistema operativo.
+
+se puede hacer de la siguiente manera, preguntamos por el kernel y buscamos exploit, o ocupamos leanpeace para ver distintas vulnerabilidades.
+
+
+
+
+
+
+
