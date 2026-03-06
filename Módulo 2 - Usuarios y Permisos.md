@@ -185,6 +185,7 @@ se puede hacer de la siguiente manera, preguntamos por el kernel y buscamos expl
 
 esto sirve para enumerar los servicios y encontrar alguno que permita escalar privilegios. pero eso no lo haremos ahora es solo una demostracion.
 
+lo que haremos sera escalar privilegios con una vulnerabilidad llamada pwnkit, hacemos una carpeta y descargamos el siguiente exploit ... ¿?
 
 
 
