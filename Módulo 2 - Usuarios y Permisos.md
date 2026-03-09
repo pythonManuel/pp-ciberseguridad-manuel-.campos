@@ -193,7 +193,7 @@ pero el exploit no funciona porque en esta version de Ubuntu se encuentra parcha
 
 Conclusion
 
-no es posible aun escalar privilegios de las maneras conocidas convencionales.
+no es posible aun escalar privilegios de las maneras conocidas convencionales. que algunos archivos o carpetas tengan permisos suid no significa que sean explotables
 
 
 
