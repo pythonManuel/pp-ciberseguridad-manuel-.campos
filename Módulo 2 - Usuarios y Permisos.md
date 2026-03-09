@@ -183,10 +183,17 @@ se puede hacer de la siguiente manera, preguntamos por el kernel y buscamos expl
 
 ![13   modulo 2 leanpeas](https://github.com/user-attachments/assets/c3f8dff9-affa-43c3-a57a-8170bb154eff)
 
-esto sirve para enumerar los servicios y encontrar alguno que permita escalar privilegios. pero eso no lo haremos ahora es solo una demostracion.
+esto sirve para enumerar los servicios y encontrar alguno que permita escalar privilegios. pero leanpeas no encontro ningun error.
 
-lo que haremos sera escalar privilegios con una vulnerabilidad llamada pwnkit, hacemos una carpeta y descargamos el siguiente exploit ... ¿?
+lo que haremos sera escalar privilegios con una vulnerabilidad llamada pwnkit
 
+![16 - modulo dos pwkit](https://github.com/user-attachments/assets/baa2ea10-1ce6-45e4-a2b2-2a834c157caa)
+
+pero el exploit no funciona porque en esta version de Ubuntu se encuentra parchado
+
+Conclusion
+
+no es posible aun escalar privilegios de las maneras conocidas convencionales.
 
 
 
